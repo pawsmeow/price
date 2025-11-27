@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ПРАЙС-ЛИСТ TAPLINK | LUNOX_ML</title>
+    <style>
+        /* === 1. Глобальные и переменные === */
+        :root {
+            --primary-color: #1a237e; 
+            --accent-color: #ff4081;  
+            --background-color: #f7f9fc;
+            --text-dark: #263238;
+            --link-color: #00bcd4; /* Цвет для ссылок-примеров */
+            --transition-duration: 0.3s;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 30px 15px;
+            background-color: var(--background-color);
+            color: var(--text-dark);
+            text-align: center;
+        }
+
+        .page-wrapper {
+            max-width: 420px; 
+            margin: 0 auto;
+        }
+        
+        h1 {
+            font-size: 1.5em;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 40px;
+            text-transform: uppercase;
+        }
+
+        /* === 2. Стили и динамика карточек === */
+        .card {
+            background-color: white;
+            border-radius: 12px;
+            padding: 20px 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            text-align: left;
+            border: 1px solid #eee;
+            
+            /* Анимации появления */
+            opacity: 0;
+            transform: translateY(15px);
+            animation: fadeInSlideUp 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+            
+            /* Плавный переход для Hover (Динамика) */
+            transition: transform var(--transition-duration) ease-out, 
+                        box-shadow var(--transition-duration) ease-out,
+                        border-color var(--transition-duration) ease-out;
+        }
+
+        /* Задержки для последовательного появления */
+        .card:nth-child(1) { animation-delay: 0.1s; }
+        .card:nth-child(2) { animation-delay: 0.2s; }
+        .card:nth-child(3) { animation-delay: 0.3s; }
+
+        .card:hover {
+            transform: translateY(-5px); 
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15); 
+            border-color: var(--accent-color);
+        }
+
+        .price-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px; /* Увеличиваем отступ, чтобы разделить с деталями */
+            padding-bottom: 5px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .price-title {
+            font-size: 1.05em;
+            font-weight: 500;
+            color: var(--text-dark);
+            flex-grow: 1;
+            padding-right: 15px;
+            line-height: 1.3;
+        }
+
+        .price-value {
+            font-size: 1.8em;
+            font-weight: 800;
+            color: var(--accent-color);
+            white-space: nowrap;
+        }
+        
+        .price-details {
+            font-size: 0.9em;
+            color: #777;
+            margin-top: 5px;
+        }
+
+        .card.premium {
+            border: 3px solid var(--primary-color);
+            box-shadow: 0 10px 25px rgba(26, 35, 126, 0.2);
+        }
+        
+        .card.premium .price-value {
+             color: var(--primary-color);
+        }
+
+        .annual-note {
+            display: block;
+            font-weight: 600;
+            color: #555;
+            margin-top: 5px;
+        }
+
+        /* === 3. Ссылки-примеры (Динамика) === */
+        .example-link-container {
+            margin-top: 15px;
+            padding-top: 10px;
+            border-top: 1px dashed #e0e0e0;
+        }
+
+        .example-link {
+            display: inline-block;
+            font-size: 0.85em;
+            color: var(--link-color);
+            text-decoration: none;
+            border: 1px solid var(--link-color);
+            border-radius: 6px;
+            padding: 5px 10px;
+            font-weight: 600;
+            
+            /* Динамичный переход */
+            transition: all var(--transition-duration) ease-in-out;
+        }
+
+        .example-link:hover {
+            background-color: var(--link-color);
+            color: white;
+            transform: scale(1.05); /* Плавное увеличение при наведении */
+        }
+
+
+        /* === 4. Кнопка заказа (CTA) === */
+        .order-section {
+            margin-top: 50px;
+        }
+
+        .order-link {
+            display: block;
+            text-decoration: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-weight: 700;
+            color: white;
+            background: var(--primary-color);
+            box-shadow: 0 8px 15px rgba(26, 35, 126, 0.3);
+            
+            transition: all var(--transition-duration) ease-out;
+        }
+
+        .order-link:hover {
+            background: var(--accent-color);
+            transform: scale(1.03) translateY(-2px);
+            box-shadow: 0 10px 20px rgba(255, 64, 129, 0.4);
+        }
+        
+        /* === 5. Keyframes Анимации === */
+        @keyframes fadeInSlideUp {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="page-wrapper">
+        <h1>ПРАЙС-ЛИСТ НА TAPLINK</h1>
+
+        <div class="card">
+            <div class="price-row">
+                <div class="price-title">Самый простой таплинк</div>
+                <div class="price-value">4.9$</div>
+            </div>
+            <div class="price-details">
+                Быстрая базовая страница, шаблон, без кастома
+            </div>
+            <div class="example-link-container">
+                <a href="https://taplink.cc/nemokamui" target="_blank" class="example-link">
+                    Пример работы
+                </a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="price-row">
+                <div class="price-title">Кастомный таплинк на моём домене</div>
+                <div class="price-value">19.9$</div>
+            </div>
+            <div class="price-details">
+                Полностью настроенный, красивый, разовый платёж
+            </div>
+            <div class="example-link-container">
+                <a href="https://pawsmeow.github.io/NEMO/" target="_blank" class="example-link">
+                    Пример работы
+                </a>
+            </div>
+        </div>
+
+        <div class="card premium">
+            <div class="price-row">
+                <div class="price-title">Кастомный таплинк на собственном домене</div>
+                <div class="price-value">59.9$</div>
+            </div>
+            <div class="price-details">
+                Полный кастом, домен с ником, поддержка
+                <span class="annual-note">Дальше: 39.9$ ежегодно</span>
+            </div>
+            <div class="example-link-container">
+                <a href="https://paws-starboy.kz/" target="_blank" class="example-link">
+                    Пример работы
+                </a>
+            </div>
+        </div>
+
+        <div class="order-section">
+            <a href="https://t.me/LUNOX_ml" class="order-link">
+                Ссылка для заказа: t.me/LUNOX_ml
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>
